@@ -14,9 +14,9 @@ var actor = require('./routes/actor');
 var app = express();
 
 // connect to db
-mongoose.connect().then(() => {
-    console.log('Db connected');
-}).catch(err => console.log(err));
+mongoose.connect('mongodb://github-dataset-user:github-dataset-123@ds155864.mlab.com:55864/github-dataset' ,{useNewUrlParser: true})
+  .then(() => console.log('Db connected'))
+  .catch(err => console.log(err.message))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
