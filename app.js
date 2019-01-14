@@ -13,7 +13,7 @@ var actor = require('./routes/actor');
 
 var app = express();
 
-// connect to db 
+// connect to db
 mongoose.connect().then(() => {
     console.log('Db connected');
 }).catch(err => console.log(err));
