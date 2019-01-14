@@ -1,5 +1,5 @@
 var express = require('express');
-var mongoose = re
+var mongoose = require('')
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
