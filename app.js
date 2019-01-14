@@ -17,7 +17,7 @@ var app = express();
 mongoose.connect().then(() => {
     console.log('Db connected');
 })
-.catch(err => console.log(e))
+.catch(err => console.log(err))
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
