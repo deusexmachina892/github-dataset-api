@@ -14,7 +14,7 @@ var actor = require('./routes/actor');
 var app = express();
 
 // connect to db 
-mongoose
+mongoose.connect
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
