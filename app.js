@@ -15,7 +15,8 @@ var app = express();
 
 // connect to db 
 mongoose.connect().then(() => {
-    console.log('Db connect')
+    console.log('Db connected');
+    
 })
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
