@@ -7,13 +7,11 @@ const { validateEvent } = require('../models/Events');
 const formattedDate = require('../utils/dateUtils');
 
 const Events = mongoose.model('Event');
-const Actor = mongoose.model('Actor');
-const Repo = mongoose.model('Repo');
 
 // Routes related to event
 router.get('/', async (req, res) => {
 // events sorted by id
-  const events = await Events.find({}, null, {sort: {'_id': '-1'}})
+  const events = await Events.find({}, null, {sort: {'_id': '-1'}});
    return res.status(200).send(events);
 });
 
