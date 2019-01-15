@@ -6,7 +6,7 @@ const async = require('async');
 const { validateEvent } = require('../models/Events');
 const formattedDate = require('../utils/dateUtils');
 
-const Event = mongoose.model('Event');
+const Events = mongoose.model('Event');
 const Actor = mongoose.model('Actor');
 const Repo = mongoose.model('Repo');
 
