@@ -52,7 +52,6 @@ router.post('/', async (req, res) => {
    let actorToBeSaved;
    try {
     event = await event.save();
-   
     repoToBeSaved = await Repo.findById(repo.id);
     if (repoToBeSaved) {
         await Repo.findByIdAndUpdate(repo.id, {
