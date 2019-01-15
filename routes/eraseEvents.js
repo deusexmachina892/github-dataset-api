@@ -10,7 +10,7 @@ const Events = mongoose.model('Event');
 router.delete('/', async (req, res) => {
   await Repo.deleteMany();
   await Actor.deleteMany();
-  await Event.deleteMany();
+  await Events.deleteMany();
   return res.status(200).send('Deleted all events');
 });
 
