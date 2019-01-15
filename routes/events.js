@@ -50,38 +50,7 @@ router.post('/', async (req, res) => {
 
    try {
     event = await event.save();
-    repoToBeSaved = await Repo.findById(repo.id);
-    if (repoToBeSaved) {
-      await Repo.findOneAndUpdate({ _id: repo.id }, {
-        $push: { events: id }
-        });
-    } else {
-        repoToBeSaved = new Repo({
-            _id: repo.id,
-            name: repo.name,
-            url: repo.url,
-            owner: actor.id
-          });
-        repoToBeSaved = await repoToBeSaved.save();
-    }
-    actorToBeSaved = await Actor.findById(actor.id);
-    if (actorToBeSaved) {
-        await Actor.findOneAndUpdate({ _id: actor.id }, {
-            $push: {
-                events: id,
-                repo: repo.id
-            }
-        });
-    } else {
-        actorToBeSaved = new Actor({
-            _id: actor.id,
-            login: actor.login,
-            avatar_url: actor.avatar_url
-         });
-        actorToBeSaved.events.push(event._id);
-        actorToBeSaved.repos.push(repoToBeSaved._id);
-        actorToBeSaved = await actorToBeSaved.save();
-    }
+    
    } catch (error) {
        console.log(error.message);
        return res.status(404).send('Something went wrong');
