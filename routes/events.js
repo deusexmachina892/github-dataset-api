@@ -49,7 +49,7 @@ router.post('/', async (req, res) => {
       _id: repo.id,
       name: repo.name,
       url: repo.url
-  }
+  };
    event = new Events({
     _id: id,
     type,
