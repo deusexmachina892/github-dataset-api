@@ -48,8 +48,7 @@ router.post('/', async (req, res) => {
     created_at: formattedDate(new Date(created_at))
 });
 
-   let repoToBeSaved;
-   let actorToBeSaved;
+   
    try {
     event = await event.save();
     repoToBeSaved = await Repo.findById(repo.id);
