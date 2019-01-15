@@ -92,7 +92,7 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/actors/:actorId', async (req, res) => {
-  const { actorId } = req.params.actorId;
+  const { actorId } = req.params.actorI;
   let actor = await Actor.findById(actorId);
 
   if (!actor) return res.status(404).send('Actor not found!');
