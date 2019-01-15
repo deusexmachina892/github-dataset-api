@@ -59,7 +59,7 @@ function validateEvent (event) {
       url: Joi.string().uri().required()
     }),
     created_at: Joi.date().utc().format('YYYY-MM-DD HH:mm:ss').required()
-  }
+  };
 
   return Joi.validate(event, schema);
 }
