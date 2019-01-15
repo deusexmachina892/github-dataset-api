@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
       _id: actor.id,
       login: actor.login,
       avatar_url: actor.avatar_url
-  }
+  };
 
   let repoNew = {
       _id: repo.id,
