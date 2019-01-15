@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
 
   let event = await Event.findById(id);
 
-  if (event) return res.status(400).send('Event with same id exists!');
+  if (event) {return res.status(400).send('Event with same id exists!');
 
    event = new Event({
     _id: id,
