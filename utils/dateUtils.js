@@ -1,5 +1,4 @@
 module.exports = (date) => {
- 
   var now_utc =  Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(),
   date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
 
