@@ -13,8 +13,7 @@ const actorSchema = new mongoose.Schema({
     avatar_url: {
       type: String,
       required: true
-    },
-   
+    }
 });
 
 actorSchema.pre('save', function (next) {
