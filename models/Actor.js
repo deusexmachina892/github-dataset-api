@@ -32,3 +32,4 @@ actorSchema.options.toObject = actorSchema.options.toJSON = {
 };
 
 mongoose.model('Actor', actorSchema);
+module.exports = actorSchema;
