@@ -39,7 +39,7 @@ router.post('/', async (req, res) => {
   if (event) {
       return res.status(400).send('Event with same id exists!');
   }
-
+ 
    event = new Events({
     _id: id,
     type,
@@ -50,7 +50,6 @@ router.post('/', async (req, res) => {
 
    try {
     event = await event.save();
-
    } catch (error) {
        console.log(error.message);
        return res.status(404).send('Something went wrong');
