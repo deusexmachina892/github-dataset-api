@@ -10,7 +10,7 @@ router.put('/', async (req, res) => {
    if (!actorInEvent) return res.status(404).send('Actor does not exist!');
    if (actorInEvent.login !== login) return res.status(400).send('Cannot modify any other field that avatar_url');
 
-   let actor = await Events.updateMany({'actor._id': id}, {
+   await Events.updateMany({'actor._id': id}, {
        $set: {
            'actor.avatar_url': avatar_url
        }
