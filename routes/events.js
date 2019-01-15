@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 // events sorted by id
   const events = await Event.find({}, null, {sort: {'_id': '-1'}})
                    .select('-__v')
-                   .populate('actor repo','-__v -events -repos');
+                   .populate('actor repo', '-__v -events -repos');
 
    return res.status(200).send(events);
                          
