@@ -48,23 +48,43 @@ router.post('/', async (req, res) => {
     created_at: formattedDate(new Date(created_at))
 });
 
-   let repoToBeSaved = new Repo({
-     _id: repo.id,
-     name: repo.name,
-     url: repo.url,
-     owner: actor.id
-   });
-   let actorToBeSaved = new Actor({
-      _id: actor.id,
-      login: actor.login,
-      avatar_url: actor.avatar_url
-   });
-   actorToBeSaved.events.push(event._id);
-   actorToBeSaved.repos.push(repoToBeSaved._id);
+   let repoToBeSaved;
+   let actorToBeSaved;
    try {
     event = await event.save();
-    repoToBeSaved = await repoToBeSaved.save();
-    actorToBeSaved = await actorToBeSaved.save();
+    
+    repoToBeSaved = await Repo.findById(repo.id);
+    if (repoToBeSaved) {
+        await Repo.findByIdAndUpdate(repo.id, {
+            $push: { events: id}
+        })
+    } else {
+        repoToBeSaved = new Repo({
+            _id: repo.id,
+            name: repo.name,
+            url: repo.url,
+            owner: actor.id
+          });
+        repoToBeSaved = await repoToBeSaved.save();
+    }
+    actorToBeSaved = await Actor.findById(actor.id);
+    if(actorToBeSaved) {
+        await Actor.findByIdAndUpdate(actor.id, {
+            $push: {
+                events: id,
+                repo: repo.id
+            }
+        })
+    } else {
+        actorToBeSaved = new Actor({
+            _id: actor.id,
+            login: actor.login,
+            avatar_url: actor.avatar_url
+         });
+        actorToBeSaved.events.push(event._id);
+        actorToBeSaved.repos.push(repoToBeSaved._id);
+        actorToBeSaved = await actorToBeSaved.save();
+    }
    } catch (error) {
        console.log(error.message);
        return res.status(404).send('Something went wrong');
