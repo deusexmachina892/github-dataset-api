@@ -67,7 +67,7 @@ router.post('/', async (req, res) => {
         repoToBeSaved = await repoToBeSaved.save();
     }
     actorToBeSaved = await Actor.findById(actor.id);
-    if(actorToBeSaved) {
+    if (actorToBeSaved) {
         await Actor.findByIdAndUpdate(actor.id, {
             $push: {
                 events: id,
