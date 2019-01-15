@@ -64,7 +64,6 @@ router.post('/', async (req, res) => {
    } catch (error) {
        res.status(404).send('Something went wrong');
    }
-
   return res.status(200).send('Event saved successfully!');
 });
 
