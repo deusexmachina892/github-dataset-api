@@ -37,8 +37,7 @@ router.get('/', async (req, res) => {
         actorJSON[actorId].eventLength += 1;
        }
     });
-    
-   actorJSON = Object.values(actorJSON).sort(function(x, y){
+     actorJSON = Object.values(actorJSON).sort(function(x, y){
         return y.eventLength - x.eventLength || new Date(y.latest_event) - new Date(x.latest_event) || y.login - x.login;
     })
     
