@@ -1,4 +1,4 @@
-const mongoose =  require('mongoose');
+const mongoose = require('mongoose');
 
 const repoSchema = new mongoose.Schema({
     _id: {
