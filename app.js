@@ -5,7 +5,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
-require('./models/Event');
+require('./models/Events');
 require('./models/Actor');
 require('./models/Repo');
 
