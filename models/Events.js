@@ -36,6 +36,7 @@ eventSchema.pre('save', function (next) {
   next();
 });
 
+
 eventSchema.options.toObject = eventSchema.options.toJSON = {
   virtuals: true,
   transform: function (doc, returned, opts) {
