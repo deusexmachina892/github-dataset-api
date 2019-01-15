@@ -1,7 +1,17 @@
+const express = require('express');
+const mongoose = require('mongoose');
+const router = express.Router();
+const async = require('async');
 
+const { validateEvent } = require('../models/Event');
+const formattedDate = require('../utils/dateUtils');
+
+
+const Event = mongoose.model('Event');
+const Actor = mongoose.model('Actor');
+const Repo = mongoose.model('Repo');
 
 // Routes related to event
-
 
 router.get('/', async (req, res) => {
 // events sorted by id
