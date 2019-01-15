@@ -22,7 +22,6 @@ const eventSchema = new mongoose.Schema({
   },
   repo: {
     type: repoSchema,
-    ref: 'Repo',
     required: true
   },
   created_at: {
