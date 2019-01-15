@@ -11,7 +11,7 @@ const Events = mongoose.model('Event');
 // Routes related to event
 router.get('/', async (req, res) => {
 // events sorted by id
-  const events = await Events.find({}, null, {sort: {'_id': '-1'}});
+  const events = await Events.find({}, null, {sort: {'_id': '1'}});
    return res.status(200).send(events);
 });
 
