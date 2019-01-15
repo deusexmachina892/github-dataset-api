@@ -23,7 +23,6 @@ repoSchema.pre('save', function (next) {
   next();
 });
 
-
 repoSchema.options.toObject = repoSchema.options.toJSON = {
   virtuals: true,
   transform: function (doc, returned, opts) {
