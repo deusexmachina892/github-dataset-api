@@ -39,7 +39,6 @@ router.post('/', async (req, res) => {
   if (event) {
       return res.status(400).send('Event with same id exists!');
   }
-  
    let actorNew = {
       _id: actor.id,
       login: actor.login,
