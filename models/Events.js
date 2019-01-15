@@ -21,7 +21,7 @@ const eventSchema = new mongoose.Schema({
     required: true
   },
   repo: {
-    type: ,
+    type: repos,
     ref: 'Repo',
     required: true
   },
