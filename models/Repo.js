@@ -8,7 +8,7 @@ const repoSchema = new mongoose.Schema({
     },
     name: {
     type: String,
-    required: true    
+    required: true
   },
   url: {
     type: String,
@@ -19,7 +19,6 @@ const repoSchema = new mongoose.Schema({
 repoSchema.pre('save', function (next) {
   // Delete the id and avoid to save it.
   delete this.id;
- 
   next();
 });
 
