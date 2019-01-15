@@ -4,7 +4,7 @@ const router = express.Router();
 
 const Repo = mongoose.model('Repo');
 const Actor = mongoose.model('Actor');
-const Event = mongoose.model('Event');
+const Events = mongoose.model('Event');
 // Route related to delete events
 
 router.delete('/', async (req, res) => {
