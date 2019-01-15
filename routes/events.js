@@ -73,7 +73,7 @@ router.post('/', async (req, res) => {
                 events: id,
                 repo: repo.id
             }
-        })
+        });
     } else {
         actorToBeSaved = new Actor({
             _id: actor.id,
