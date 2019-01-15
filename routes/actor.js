@@ -19,7 +19,7 @@ router.put('/', async (req, res) => {
 });
 
 router.get('/', async (req, res) => {
-    const actors  = await Events.find({}).select('actor created_at');
+    const actors = await Events.find({}).select('actor created_at');
     let actorJSON = {};
     actors.forEach(actor => {
         let actorId = actor['actor'].id;
