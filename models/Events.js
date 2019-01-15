@@ -6,7 +6,6 @@ const Joi = BaseJoi.extend(Extension);
 const actorSchema = require('./Actor');
 const repoSchema = require('./Repo');
 
-
 const eventSchema = new mongoose.Schema({
   _id: {
     type: Number,
