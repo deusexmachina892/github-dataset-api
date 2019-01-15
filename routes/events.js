@@ -54,7 +54,7 @@ router.post('/', async (req, res) => {
       _id: actor.id,
       login: actor.login,
       avatar_url: actor.avatar_url
-   })
+   });
     
    
     actorToBeSaved.events.push(event._id);
