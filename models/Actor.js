@@ -16,7 +16,7 @@ const actorSchema = new mongoose.Schema({
     },
     events: [{
       type: Number,
-      ref:'Event'
+      ref: 'Event'
     }],
     repos: [{
       type: Number,
