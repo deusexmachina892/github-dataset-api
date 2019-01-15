@@ -51,7 +51,7 @@ router.post('/', async (req, res) => {
      _id: repo.id,
      name: repo.name,
      url: repo.url,
-     owner: actor.id 
+     owner: actor.id
    });
    let actorToBeSaved = new Actor({
       _id: actor.id,
@@ -61,7 +61,7 @@ router.post('/', async (req, res) => {
     
    
     actorToBeSaved.events.push(event._id);
-    actorToBeSaved.repos.push(repoToBeSaved._id); 
+    actorToBeSaved.repos.push(repoToBeSaved._id);
    try {
     event = await event.save();
     repoToBeSaved = await repoToBeSaved.save();
