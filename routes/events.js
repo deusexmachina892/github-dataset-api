@@ -55,7 +55,6 @@ router.post('/', async (req, res) => {
       login: actor.login,
       avatar_url: actor.avatar_url
    });
-
    actorToBeSaved.events.push(event._id);
    actorToBeSaved.repos.push(repoToBeSaved._id);
    try {
@@ -66,7 +65,6 @@ router.post('/', async (req, res) => {
        res.status(404).send('Something went wrong');
    }
   
-
   //console.log(event);
   return res.status(200).send('Event saved successfully!');
 });
