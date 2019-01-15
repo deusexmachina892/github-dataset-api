@@ -38,7 +38,7 @@ router.get('/', async (req, res) => {
        }
     });
     actorJSON = Object.values(actorJSON).sort(function (x, y) {
-        return y.eventLength - x.eventLength || new Date(y.latest_event) - new Date(x.latest_event) || y.login - x.login;
+        return y.eventLength - x.eventLength || new Date(y.latest_event) - new Date(x.latest_event) || .login - x.login;
     });
     actorJSON = actorJSON.map(actor => {
         delete actor.eventLength;
