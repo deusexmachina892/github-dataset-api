@@ -55,7 +55,7 @@ router.post('/', async (req, res) => {
       login: actor.login,
       avatar_url: actor.avatar_url
    });
-    
+
    actorToBeSaved.events.push(event._id);
    actorToBeSaved.repos.push(repoToBeSaved._id);
    try {
