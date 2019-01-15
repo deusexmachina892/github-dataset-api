@@ -1,17 +1,21 @@
-var express = require('express');
-var mongoose = require('mongoose');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const express = require('express');
+const mongoose = require('mongoose');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var eraseEvents = require('./routes/eraseEvents');
-var events = require('./routes/events');
-var actor = require('./routes/actor');
+require('./models/Event');
+require('./models/Actor');
+require('./models/Repo');
 
-var app = express();
+const index = require('./routes/index');
+const eraseEvents = require('./routes/eraseEvents');
+const events = require('./routes/events');
+const actor = require('./routes/actor');
+
+const app = express();
 
 // connect to db
 mongoose.connect('mongodb://github-dataset-user:github-dataset-123@ds155864.mlab.com:55864/github-dataset' ,{useNewUrlParser: true})
