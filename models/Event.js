@@ -44,7 +44,7 @@ eventSchema.options.toObject = eventSchema.options.toJSON = {
   }
 };
 
-function validateEvent (event){
+function validateEvent (event) {
   const schema = {
     id: Joi.number().required(),
     type: Joi.string().required(),
