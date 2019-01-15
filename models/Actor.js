@@ -14,14 +14,7 @@ const actorSchema = new mongoose.Schema({
       type: String,
       required: true
     },
-    events: [{
-      type: Number,
-      ref: 'Event'
-    }],
-    repos: [{
-      type: Number,
-      ref: 'Repo'
-    }]
+   
 });
 
 actorSchema.pre('save', function (next) {
