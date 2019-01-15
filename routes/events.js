@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
       return res.status(400).send('Event with same id exists!');
   }
 
-   event = new Event({
+   event = new Events({
     _id: id,
     type,
     actor: actor.id,
