@@ -67,7 +67,6 @@ router.get('/actors/:actorId', async (req, res) => {
   const { actorId } = req.params;
   let actor = await Events.findOne({ 'actor._id': actorId });
   if (!actor) {
-   
       return res.status(404).send('Actor not found!');
     }
  const eventsByActor = await Events.find({ 'actor._id': actorId}, null, { sort: { '_id': '-1' }});
