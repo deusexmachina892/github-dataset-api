@@ -55,7 +55,7 @@ router.post('/', async (req, res) => {
     _id: id,
     type,
     actor: actorNew,
-    repo: ,
+    repo: repo,
     created_at: formattedDate(new Date(created_at))
 });
 
