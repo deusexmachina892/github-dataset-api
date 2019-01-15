@@ -17,7 +17,7 @@ const eventSchema = new mongoose.Schema({
       required: true
   },
   actor: {
-    type: ,
+    type: s,
     ref: 'Actor',
     required: true
   },
