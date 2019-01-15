@@ -65,7 +65,7 @@ router.post('/', async (req, res) => {
 
 router.get('/actors/:actorId', async (req, res) => {
   const { actorId } = req.params;
-  let actor = await Events.findOne({ 'actor._id': actorId});
+  let actor = await Events.findOne({ 'actor._id': actorId });
   if (!actor) {
       console.log(actor)
       return res.status(404).send('Actor not found!');
