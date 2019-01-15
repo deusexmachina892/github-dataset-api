@@ -32,7 +32,6 @@ const eventSchema = new mongoose.Schema({
 eventSchema.pre('save', function (next) {
   // Delete the id and avoid to save it.
   delete this.id;
- 
   next();
 });
 
