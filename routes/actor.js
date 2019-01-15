@@ -70,7 +70,6 @@ router.get('/streak', async (req, res) => {
     actorJSON = Object.values(actorJSON).sort(function (x, y) {
         return y.streak - x.streak || new Date(y.latest_event) - new Date(x.latest_event) || y.login - x.login;
     });
-   
     actorJSON = actorJSON.map(actor => {
         delete actor.streak;
         delete actor.latest_event;
@@ -78,5 +77,5 @@ router.get('/streak', async (req, res) => {
     });
 
     res.status(200).send(actorJSON);
-})
+});
 module.exports = router;
