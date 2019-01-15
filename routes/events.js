@@ -66,7 +66,7 @@ router.post('/', async (req, res) => {
     repoToBeSaved = await repoToBeSaved.save();
     actorToBeSaved = await actorToBeSaved.save();
    } catch (error) {
-       console.log
+       console.log(error)
        return res.status(404).send('Something went wrong');
    }
   return res.status(201).send('Event saved successfully!');
