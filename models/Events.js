@@ -36,6 +36,7 @@ eventSchema.pre('save', function (next) {
   next();
 });
 
+eventSchema.set('versionKey', false);
 
 eventSchema.options.toObject = eventSchema.options.toJSON = {
   virtuals: true,
