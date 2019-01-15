@@ -70,7 +70,6 @@ router.get('/actors/:actorId', async (req, res) => {
       console.log(actor)
       return res.status(404).send('Actor not found!');
     }
-  
  const eventsByActor = await Events.find({'actor._id': actorId}, null, { sort: { '_id': '-1' }});
  return res.status(200).send(eventsByActor);
 
