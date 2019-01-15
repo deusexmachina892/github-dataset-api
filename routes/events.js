@@ -56,7 +56,7 @@ router.post('/', async (req, res) => {
     if (repoToBeSaved) {
         await Repo.findByIdAndUpdate(repo.id, {
             $push: { events: id}
-        })
+        });
     } else {
         repoToBeSaved = new Repo({
             _id: repo.id,
