@@ -3,7 +3,6 @@ const BaseJoi = require('joi');
 const Extension = require('joi-date-extensions');
 const Joi = BaseJoi.extend(Extension);
 
-
 const eventSchema = new mongoose.Schema({
   _id: {
     type: Number,
