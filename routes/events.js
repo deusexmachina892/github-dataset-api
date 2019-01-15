@@ -54,7 +54,7 @@ router.post('/', async (req, res) => {
    event = new Events({
     _id: id,
     type,
-    actor: ,
+    actor: actorNew,
     repo: repo.id,
     created_at: formattedDate(new Date(created_at))
 });
