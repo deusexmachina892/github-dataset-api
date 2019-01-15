@@ -72,7 +72,6 @@ router.get('/actors/:actorId', async (req, res) => {
     }
  const eventsByActor = await Events.find({'actor._id': actorId}, null, { sort: { '_id': '-1' }});
  return res.status(200).send(eventsByActor);
-
 });
 
 module.exports = router;
