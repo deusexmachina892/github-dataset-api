@@ -18,7 +18,7 @@ const actor = require('./routes/actor');
 const app = express();
 
 // connect to db
-mongoose.connect('mongodb://github-dataset-user:github-dataset-123@ds155864.mlab.com:55864/github-dataset' ,{useNewUrlParser: true})
+mongoose.connect('mongodb://github-dataset-user:github-dataset-123@ds155864.mlab.com:55864/github-dataset' , {useNewUrlParser: true})
   .then(() => console.log('Db connected'))
   .catch(err => console.log(err.message))
 
