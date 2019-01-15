@@ -1,5 +1,5 @@
 module.exports = (date) => {
-  va now_utc =  Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(),
+  const now_utc =  Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(),
   date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
 
   var d = new Date(now_utc);
