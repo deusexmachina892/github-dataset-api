@@ -32,3 +32,4 @@ repoSchema.options.toObject = repoSchema.options.toJSON = {
 };
 
 mongoose.model('Repo', repoSchema);
+module.exports = repoSchema;
