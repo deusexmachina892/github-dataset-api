@@ -47,8 +47,6 @@ router.post('/', async (req, res) => {
     repo: repo.id,
     created_at: formattedDate(new Date(created_at))
 });
-
-   
    try {
     event = await event.save();
     repoToBeSaved = await Repo.findById(repo.id);
