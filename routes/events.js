@@ -63,6 +63,17 @@ router.post('/', async (req, res) => {
   return res.status(201).send('Event saved successfully!');
 });
 
+router.get('/actors/:actorId', async (req, res) => {
+  const { actorId } = req.params;
+  let actor = await Events.findOne({ 'actor._id': actorId});
+  if(!actor) {
+      console.log(actor)
+      return res.status(404).send('Actor not found!');
+    }
+  
+ const eventsByActor = await Events.find({'actor._id': actorId}, null, { sort: { '_id': '-1' }});
+ return res.status(200).send(eventsByActor);
 
+});
 
 module.exports = router;
