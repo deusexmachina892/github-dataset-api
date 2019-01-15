@@ -18,9 +18,7 @@ router.get('/', async (req, res) => {
                    .populate('actor repo', '-__v -events -repos');
 
    return res.status(200).send(events);
-                        
 });
-
 
 router.post('/', async (req, res) => {
   
