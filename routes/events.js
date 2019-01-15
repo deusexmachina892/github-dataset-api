@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const router = express.Router();
 const async = require('async');
 
-const { validateEvent } = require('../models/Event');
+const { validateEvent } = require('../models/Events');
 const formattedDate = require('../utils/dateUtils');
 
 const Event = mongoose.model('Event');
