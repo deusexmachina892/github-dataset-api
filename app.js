@@ -20,7 +20,7 @@ const app = express();
 // connect to db
 mongoose.connect(dbPath, {useNewUrlParser: true})
   .then(() => console.log('Db connected'))
-  .catch(err => console.log(err.message));
+  .catch(err => throe r);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
