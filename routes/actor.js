@@ -51,6 +51,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/streak', async (req, res) => {
+    const eventsByActors = await Events.find({}).select('actor created_at').sort({ 'created_at':'1' });
     let actorJSON = {};
     eventsByActors.forEach(event => {
         let actorId = event['actor'].id;
