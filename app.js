@@ -22,7 +22,6 @@ mongoose.connect(dbPath, {useNewUrlParser: true})
   .then(() => console.log('Db connected'))
   .catch(err => {  
       throw err 
-     
   });
 
 // view engine setup
