@@ -18,7 +18,7 @@ const actor = require('./routes/actor');
 const app = express();
 
 // connect to db
-mongoose.connect(, {useNewUrlParser: true})
+mongoose.connect(dbPath, {useNewUrlParser: true})
   .then(() => console.log('Db connected'))
   .catch(err => console.log(err.message));
 
