@@ -20,7 +20,8 @@ const app = express();
 // connect to db
 mongoose.connect(dbPath, {useNewUrlParser: true})
   .then(() => console.log('Db connected'))
-  .catch(err => {  throw err 
+  .catch(err => {  
+throw err 
       
   });
 
