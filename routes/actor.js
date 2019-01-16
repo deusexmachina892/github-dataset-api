@@ -86,7 +86,7 @@ router.get('/streak', async (req, res) => {
         delete actor.latest_event;
         return actor;
     });
-    
+   
     res.status(200).send(actorJSON);
 });
 
