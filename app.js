@@ -21,8 +21,8 @@ const app = express();
 mongoose.connect(dbPath, {useNewUrlParser: true})
   .then(() => console.log('Db connected'))
   .catch(err => {  
-throw err 
-      
+      throw err 
+     
   });
 
 // view engine setup
