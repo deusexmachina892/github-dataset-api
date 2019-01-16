@@ -43,13 +43,11 @@ router.get('/', async (req, res) => {
         const sortByLogin = x.login < y.login ? -1 : (x.login > y.login)? 1:0;
         return sortByEventLength || sortByLatestEvent ||sortByLogin;
     });
-    
     actorJSON = actorJSON.map(actor => {
         delete actor.eventLength;
         delete actor.latest_event;
         return actor;
     });
-  
     res.status(200).send(actorJSON);
 });
 
