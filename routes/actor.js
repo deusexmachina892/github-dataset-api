@@ -79,7 +79,6 @@ router.get('/streak', async (req, res) => {
         const sortByLogin = x.login < y.login ? -1 : (x.login > y.login)? 1:0;
         return sortByStreak || sortByLatestEvent || sortByLogin;
     });
-   
     actorJSON = actorJSON.map(actor => {
         delete actor.streak;
         delete actor.latest_event;
