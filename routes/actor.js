@@ -37,7 +37,7 @@ router.get('/', async (req, res) => {
        }
     });
     actorJSON = Object.values(actorJSON).sort( function(x, y) {
-        const sortByEventLength = x.eventLength > y.eventLength?  - 1 : (x.eventLength < y.eventLength) ? 1:0;
+        const sortByEventLength = x.eventLength > y.eventLength?  - 1 : (x.eventLength < y.eventLength) ? 1: 0;
         const sortByLatestEvent = (new Date(x.latest_event) > new Date(y.latest_event))? -1 : (new Date(x.latest_event) < new Date(y.latest_event))? 1: 0;
         const sortByLogin = x.login < y.login ? -1 : (x.login > y.login)? 1:0;
         return sortByEventLength || sortByLatestEvent ||sortByLogin;
