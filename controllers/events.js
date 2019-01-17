@@ -14,7 +14,6 @@ const addEvent = async (req, res) => {
 	if (error) {
 		return res.status(400).send('Please check the fields entered!');
 	}
-  
 	const {
 		id,
 		type,
