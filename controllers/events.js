@@ -42,7 +42,7 @@ const addEvent = async (req, res) => {
 	repo: repoNew,
 	created_at
   });
-	event = await event.save();
+  event = await event.save();
 	return res.status(201).send('Event saved successfully!');
   };
 
