@@ -16,5 +16,4 @@ require('./startup/db')();
 const app = express();
 require('./startup/routes')(app);
 
-cons
 module.exports = app;
