@@ -33,8 +33,8 @@ const addEvent = async (req, res) => {
   let repoNew = {
 	_id: repo.id,
 	name: repo.name,
-		url: repo.url
-	};
+	url: repo.url
+  };
 	 event = new Events({
 	  _id: id,
 	  type,
