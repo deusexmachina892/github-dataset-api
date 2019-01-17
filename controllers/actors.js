@@ -37,7 +37,6 @@ const updateActor = async (req, res) => {
 	const { id, login, avatar_url } = req.body
 	let actorInEvent = (await Events.findOne({ 'actor._id': id })).actor;
 	if (!actorInEvent) return res.status(404).send('Actor does not exist!');
-	
 	if (actorInEvent.login !== login) return res.status(400).send('Cannot modify any other field that avatar_url');
  
 	let actor = await Events.updateMany({'actor._id': id}, {
