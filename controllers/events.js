@@ -27,7 +27,7 @@ const addEvent = async (req, res) => {
   }
   let actorNew = {
 	_id: actor.id,
-		login: actor.login,
+	login: actor.login,
 		avatar_url: actor.avatar_url
 	};
 	let repoNew = {
