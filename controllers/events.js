@@ -67,6 +67,3 @@ module.exports = {
 	getByActor,
 	eraseEvents
 };
-
-
-
