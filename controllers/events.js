@@ -18,8 +18,8 @@ const addEvent = async (req, res) => {
 	id,
 	type,
 	actor,
-		repo,
-		created_at
+	repo,
+	created_at
 	} = req.body;
   	let event = await Events.findById(id);
   	if (event) {
