@@ -43,7 +43,7 @@ const updateActor = async (req, res) => {
 			'actor.avatar_url': avatar_url
 		}
 	}, {new: true});
-	return res.status(200).send(a);
+	return res.status(200).send(actor);
  };
 
 const getStreak = async (req, res) => {
