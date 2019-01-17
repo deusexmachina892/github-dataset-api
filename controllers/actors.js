@@ -67,7 +67,7 @@ const getStreak = async (req, res) => {
           actorJSON[actorId].latest_event = event.created_at;
        }
     });
-    actorJSON = Object.values(actorJSON).sort(function (x, y){
+    actorJSON = Object.values(actorJSON).sort(function (x, y) {
         const sortByStreak = x.streak > y.streak?  -1 : (x.streak < y.streak)?1:0;
         const sortByLatestEvent = (new Date(x.latest_event) > new Date(y.latest_event))? -1 : (new Date(x.latest_event) < new Date(y.latest_event))? 1: 0;
         const sortByLogin = x.login < y.login ? -1 : (x.login > y.login)? 1:0;
