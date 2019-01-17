@@ -43,7 +43,7 @@ const addEvent = async (req, res) => {
 	created_at
   });
   event = await event.save();
-  return res.status(201).send('Event saved successfully!');
+    return res.status(201).send('Event saved successfully!');
   };
 
 
