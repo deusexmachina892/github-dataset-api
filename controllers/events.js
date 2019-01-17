@@ -31,7 +31,7 @@ const addEvent = async (req, res) => {
 	avatar_url: actor.avatar_url
   };
   let repoNew = {
-		_id: repo.id,
+	_id: repo.id,
 		name: repo.name,
 		url: repo.url
 	};
