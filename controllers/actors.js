@@ -61,7 +61,7 @@ const getStreak = async (req, res) => {
           actorJSON[actorId].streak = 0;
           actorJSON[actorId].latest_event = event.created_at;
        } else {
-        if ((new Date(event.created_at).setHours(0,0,0,0) - new Date(actorJSON[actorId].latest_event).setHours(0,0,0,0)) === 86400000){
+        if ((new Date(event.created_at).setHours(0, 0,0,0) - new Date(actorJSON[actorId].latest_event).setHours(0,0,0,0)) === 86400000){
           actorJSON[actorId].streak += 1;
         }
           actorJSON[actorId].latest_event = event.created_at;
