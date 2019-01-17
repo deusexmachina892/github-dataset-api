@@ -4,7 +4,7 @@ const { validateEvent } = require('../models/Events');
 
 const Events = mongoose.model('Event');
 
-const getAllEvents =  async (req, res) => {
+const getAllEvents = async (req, res) => {
   const events = await Events.find({}, null, {sort: {'_id': '1'}});
   return res.status(200).send(events);
 };
