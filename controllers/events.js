@@ -56,7 +56,6 @@ const getByActor = async (req, res) => {
   return res.status(200).send(eventsByActor);
 };
 
-
 const eraseEvents = async (req, res) => {
   await Events.deleteMany();
   return res.status(200).send('Deleted all events');
