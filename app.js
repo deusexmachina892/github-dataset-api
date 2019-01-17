@@ -16,5 +16,5 @@ require('./startup/db')();
 const app = express();
 require('./startup/routes')(app);
 
-const port = process.env.PORT || 5000;
+cons
 module.exports = app;
