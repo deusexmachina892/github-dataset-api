@@ -14,10 +14,11 @@ require('./startup/db')();
 
 // view engine, routes related logic and error handling
 const app = express();
-require('./startup/routes')(app);
+require('./startup/middlewares')(app);
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
-  winston.log('info', `Server bound to PORT:${port}`);
+  winston.log(`Server bound to PORT: ${port}`);
 })
+
 module.exports = app;

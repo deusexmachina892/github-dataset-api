@@ -3,19 +3,20 @@ const mongoose = require('mongoose');
 const Events = mongoose.model('Event');
 
 const getAllActors = async (req, res) => {
-    const actors = await Events.find({}).select('actor created_at').sort({'created_at':'-1'});
+    const eventsByActors = await Events.find({}).select('actor created_at').sort({'created_at':'-1'});
     let actorJSON = {};
-    actors.forEach(actor => {
-        let actorId = actor['actor'].id;
+    eventsByActors.forEach(event => {
+        let actorId = event['actor'].id;
        if (!actorJSON[actorId]) {
-          actorJSON[actorId] = {};
-          actorJSON[actorId].id = Number(actorId);
-          actorJSON[actorId].login = actor['actor'].login;
-          actorJSON[actorId].avatar_url = actor['actor'].avatar_url;
-          actorJSON[actorId].eventLength = 1;
-          actorJSON[actorId].latest_event = actor.created_at;
+          actorJSON[actorId] = {
+              id: Number(actorId),
+              login: event['actor'].login,
+              avatar_url: event['actor'].avatar_url,
+              eventLength: 1,
+              latest_event: event.created_at
+          };
        } else {
-          actorJSON[actorId].latest_event = actor.created_at;
+          actorJSON[actorId].latest_event = event.created_at;
           actorJSON[actorId].eventLength += 1;
        }
     });
@@ -54,12 +55,13 @@ const getStreak = async (req, res) => {
     eventsByActors.forEach(event => {
         let actorId = event['actor'].id;
        if (!actorJSON[actorId]) {
-          actorJSON[actorId] = {};
-          actorJSON[actorId].id = Number(actorId);
-          actorJSON[actorId].login = event['actor'].login;
-          actorJSON[actorId].avatar_url = event['actor'].avatar_url;
-          actorJSON[actorId].streak = 0;
-          actorJSON[actorId].latest_event = event.created_at;
+          actorJSON[actorId] = {
+            id: Number(actorId),
+            login: event['actor'].login,
+            avatar_url: event['actor'].avatar_url,
+            streak: 0,
+            latest_event: event.created_at
+          };
        } else {
         if ( (new Date(event.created_at).setHours(0,0,0,0) - new Date(actorJSON[actorId].latest_event).setHours(0,0,0,0)) === 86400000){
           actorJSON[actorId].streak += 1;
