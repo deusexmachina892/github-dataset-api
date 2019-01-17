@@ -17,7 +17,7 @@ const addEvent = async (req, res) => {
   const {
 	id,
 	type,
-		actor,
+	actor,
 		repo,
 		created_at
 	} = req.body;
