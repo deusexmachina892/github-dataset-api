@@ -5,4 +5,4 @@ const { dbPath } = require('../config/keys');
 module.exports = () => {
     mongoose.connect(dbPath, {useNewUrlParser: true})
     .then(() => winston.info('Connected to db'));
-}
+};
