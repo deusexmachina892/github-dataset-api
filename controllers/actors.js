@@ -79,7 +79,6 @@ const getStreak = async (req, res) => {
     res.status(200).send(actorJSON);
 };
 
-
 module.exports = {
 	updateActor,
 	getAllActors,
