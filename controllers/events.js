@@ -21,8 +21,7 @@ const addEvent = async (req, res) => {
 		repo,
 		created_at
 	} = req.body;
-  
-	let event = await Events.findById(id);
+  	let event = await Events.findById(id);
   
 	if (event) {
 		return res.status(400).send('Event with same id exists!');
