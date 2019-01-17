@@ -45,8 +45,6 @@ const addEvent = async (req, res) => {
   event = await event.save();
     return res.status(201).send('Event saved successfully!');
   };
-
-
 const getByActor = async (req, res) => {
   const { actorId } = req.params;
   let actor = await Events.findOne({ 'actor._id': actorId });
