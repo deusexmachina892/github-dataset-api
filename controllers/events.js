@@ -35,12 +35,12 @@ const addEvent = async (req, res) => {
 	name: repo.name,
 	url: repo.url
   };
-   event = new Events({
+  event = new Events({
      _id: id,
 	 type,
 	 actor: actorNew,
 	 repo: repoNew,
-	  created_at
+	 created_at
   });
   
 	event = await event.save();
