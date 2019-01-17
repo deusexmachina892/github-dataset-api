@@ -48,12 +48,7 @@ const addEvent = async (req, res) => {
 	  created_at
   });
   
-	 try {
-	  event = await event.save();
-	 } catch (error) {
-		 // console.log(error.message);
-		 return res.status(404).send('Something went wrong');
-	 }
+	event = await event.save();
 	return res.status(201).send('Event saved successfully!');
   };
 
