@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Events = mongoose.model('Event');
 
 const getAllActors = async (req, res) => {
-    const actors = await Events.find({}).select('actor created_at').sort({ 'created_at':'-1'});
+    const actors = await Events.find({}).select('actor created_at').sort({ 'created_at' :'-1'});
     let actorJSON = {};
     actors.forEach(actor => {
         let actorId = actor['actor'].id;
