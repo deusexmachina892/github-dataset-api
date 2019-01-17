@@ -26,7 +26,7 @@ const addEvent = async (req, res) => {
 	return res.status(400).send('Event with same id exists!');
   }
   let actorNew = {
-		_id: actor.id,
+	_id: actor.id,
 		login: actor.login,
 		avatar_url: actor.avatar_url
 	};
