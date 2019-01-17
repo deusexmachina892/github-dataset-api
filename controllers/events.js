@@ -40,7 +40,7 @@ const addEvent = async (req, res) => {
 	type,
 	actor: actorNew,
 	repo: repoNew,
-	 created_at
+	created_at
   });
   
 	event = await event.save();
